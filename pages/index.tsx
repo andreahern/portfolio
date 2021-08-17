@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import { ChevronDoubleDownIcon } from "@heroicons/react/solid";
 
 export default function Home() {
   return (
@@ -14,9 +14,10 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="text-4xl text-gray-800 h-screen flex justify-center items-center">
-          Welcome to My Portfolio!
-        </h1>
+        <div className="text-gray-800 h-screen flex flex-col justify-center items-center filter drop-shadow-lg">
+          <h1 className="text-7xl">Welcome to Abe's Portfolio!</h1>
+          <ChevronDoubleDownIcon className="h-16 w-16 absolute bottom-0" />
+        </div>
       </main>
     </div>
   );
