@@ -6,19 +6,19 @@ import { forwardRef } from "react";
 const AboutMe = forwardRef((props, ref) => (
   <div
     ref={ref}
-    className="w-full flex flex-col justify-center items-center mt-32 text-gray-800"
+    className="w-full px-4 lg:px-0 flex flex-col justify-center items-center mt-32 text-gray-800"
   >
-    <div className="bg-gray-50 `rounded-lg w-1/2 p-4">
+    <div className="bg-gray-50 `rounded-lg w-full lg:w-1/2 p-4">
       <h1 className="text-4xl">About Me</h1>
       <hr />
-      <div className="flex flex-row space-x-4">
-        <div className="w-1/5 mt-10 flex justify-center items-center">
+      <div className="flex flex-col-reverse items-center lg:flex-row lg:space-x-4">
+        <div className="mt-10 flex justify-center items-center relative lg:w-1/5">
           <Image
             src={ucfBanner}
             alt="UCF banner logo"
-            width={150}
             height={150}
-            layout="fixed"
+            width={150}
+            className="object-contain"
           />
         </div>
         <div className="flex flex-col w-4/5">
