@@ -8,28 +8,28 @@ import "react-vertical-timeline-component/style.min.css";
 export default function Timeline() {
   return (
     <div className="w-full flex flex-col justify-center items-center mt-32 text-gray-800">
-      <h1 className="text-4xl filter drop-shadow-lg ">
+      <h1 className="text-2xl lg:text-4xl filter drop-shadow-lg ">
         Work Experience & Projects
       </h1>
-      <VerticalTimeline className="mt-10">
+      <VerticalTimeline className="mt-10" animate={false}>
         <VerticalTimelineElement
           icon={<BriefcaseIcon />}
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           position={"left"}
         >
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-lg lg:text-xl font-semibold">
             Facebook Software Engineer Intern
           </h3>
           <div className="flex flex-row space-x-8">
-            <h4 className="font-light">
+            <h4 className="text-sm lg:text-base font-light">
               <span className="font-bold">Location:</span> Remote
             </h4>
-            <h4 className="font-light">
+            <h4 className="text-sm lg:text-base font-light">
               <span className="font-bold">Date:</span> May 24, 2021 - August 13,
               2021
             </h4>
           </div>
-          <ul className="list-disc">
+          <ul className="text-sm lg:text-base list-disc mt-5 pl-4">
             <li>
               Implemented UI improvements to the Groups tab’s{" "}
               <span className="font-bold">Surface Highlights</span>{" "}
