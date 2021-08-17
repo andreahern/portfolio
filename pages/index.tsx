@@ -3,8 +3,31 @@ import { useRef } from "react";
 import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
 import Timeline from "./components/Timeline";
+import { gql } from "@apollo/client";
+import client from "../apollo-client";
 
-export default function Home() {
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query posts {
+        allPost {
+          title
+          location
+          date
+          bodyRaw
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      data: data,
+    },
+  };
+}
+
+export default function Home({ data }) {
   const aboutMeRef = useRef();
 
   return (
@@ -21,7 +44,7 @@ export default function Home() {
       <main>
         <Landing aboutMeRef={aboutMeRef} />
         <AboutMe ref={aboutMeRef} />
-        <Timeline />
+        <Timeline events={data} />
       </main>
     </>
   );
