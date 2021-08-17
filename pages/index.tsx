@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Abe's Portfolio</title>
         <meta
           name="description"
           content="A digital portfolio of my career as a software developer"
