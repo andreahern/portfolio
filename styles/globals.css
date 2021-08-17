@@ -1,8 +1,58 @@
 @tailwind base;
 @tailwind components;
 
+@font-face {
+  font-family: "Nunito Black";
+  src: local("Nunito-Black"),
+    url("../public/fonts/Nunito-Black.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Nunito SemiBold";
+  src: local("Nunito-SemiBold"),
+    url("../public/fonts/Nunito-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Nunito Light";
+  src: local("Nunito-Light"),
+    url("../public/fonts/Nunito-Light.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Nunito Regular";
+  src: local("Nunito-Regular"),
+    url("../public/fonts/Nunito-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
 body {
   background-color: #8fdddf;
+  font-family: "Nunito SemiBold", "sans-serif";
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @tailwind utilities;

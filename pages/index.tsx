@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="text-4xl h-screen flex justify-center items-center">
+        <h1 className="text-4xl text-gray-800 h-screen flex justify-center items-center">
           Welcome to My Portfolio!
         </h1>
       </main>
