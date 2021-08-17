@@ -14,7 +14,7 @@ export default function Timeline({ events }) {
       <h1 className="text-2xl lg:text-4xl filter drop-shadow-lg ">
         Work Experience & Projects
       </h1>
-      <VerticalTimeline className="mt-10" animate={false}>
+      <VerticalTimeline className="my-10" animate={false}>
         {events.allPost.map((post, index) => {
           return (
             <VerticalTimelineElement
