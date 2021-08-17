@@ -2,10 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import Landing from "./components/Landing";
 
 import profilePic from "../public/me.jpg";
 import ucfBanner from "../public/ucf_banner.png";
-import { ChevronDoubleDownIcon, BriefcaseIcon } from "@heroicons/react/solid";
+import { BriefcaseIcon } from "@heroicons/react/solid";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -27,27 +28,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="text-body h-screen flex flex-col justify-center items-center filter drop-shadow-lg">
-          <Image
-            src={profilePic}
-            alt="Picture of me!"
-            width={250}
-            height={250}
-            className="rounded-full"
-          />
-          <h1 className="text-7xl font-semibold mt-4">
-            It's Me! Abraham Hernandez
-          </h1>
-          <ChevronDoubleDownIcon
-            className="h-16 w-16 absolute bottom-0 cursor-pointer"
-            onClick={() =>
-              window.scrollTo({
-                behavior: "smooth",
-                top: aboutUsRef.current.offsetTop - 10,
-              })
-            }
-          />
-        </div>
+        <Landing aboutUsRef={aboutUsRef} />
 
         <div
           ref={aboutUsRef}
