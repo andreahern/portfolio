@@ -12,11 +12,11 @@ export default function Landing({ aboutMeRef }) {
         height={250}
         className="rounded-full"
       />
-      <h1 className="text-7xl font-semibold mt-4">
+      <h1 className="text-2xl md:text-4xl lg:text-7xl font-semibold mt-4">
         It's Me! Abraham Hernandez
       </h1>
       <ChevronDoubleDownIcon
-        className="h-16 w-16 absolute bottom-0 cursor-pointer"
+        className="h-10 w-10 md:h-16 md:w-16 absolute bottom-0 cursor-pointer"
         onClick={() =>
           window.scrollTo({
             behavior: "smooth",
