@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 import profilePic from "../public/me.jpg";
 import ucfBanner from "../public/ucf_banner.png";
@@ -12,6 +13,8 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 export default function Home() {
+  const aboutUsRef = useRef();
+
   return (
     <>
       <Head>
@@ -35,10 +38,21 @@ export default function Home() {
           <h1 className="text-7xl font-semibold mt-4">
             It's Me! Abraham Hernandez
           </h1>
-          <ChevronDoubleDownIcon className="h-16 w-16 absolute bottom-0" />
+          <ChevronDoubleDownIcon
+            className="h-16 w-16 absolute bottom-0 cursor-pointer"
+            onClick={() =>
+              window.scrollTo({
+                behavior: "smooth",
+                top: aboutUsRef.current.offsetTop - 10,
+              })
+            }
+          />
         </div>
 
-        <div className="w-full flex flex-col justify-center items-center mt-32 text-gray-800">
+        <div
+          ref={aboutUsRef}
+          className="w-full flex flex-col justify-center items-center mt-32 text-gray-800"
+        >
           <div className="bg-gray-50 rounded-lg w-1/2 p-4">
             <h1 className="text-4xl">About Me</h1>
             <hr />
