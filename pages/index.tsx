@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
 import Timeline from "./components/Timeline";
+import Socials from "./components/Socials";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
@@ -50,6 +51,7 @@ export default function Home({ allPost, aboutMe }) {
         <Landing aboutMeRef={aboutMeRef} />
         <AboutMe ref={aboutMeRef} aboutMe={aboutMe} />
         <Timeline events={allPost} />
+        <Socials />
       </main>
     </>
   );
