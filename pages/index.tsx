@@ -15,6 +15,7 @@ export async function getServerSideProps() {
           title
           location
           date
+          category
           bodyRaw
         }
         allAboutMe {
@@ -39,6 +40,7 @@ type HomeType = {
       title: string;
       location: string;
       date: string;
+      category: string;
       bodyRaw: any;
     }
   ];

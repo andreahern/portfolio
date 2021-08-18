@@ -1,4 +1,4 @@
-import { BriefcaseIcon } from "@heroicons/react/solid";
+import { BriefcaseIcon, AcademicCapIcon } from "@heroicons/react/solid";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -13,6 +13,7 @@ type TimelineType = {
           title: string | null;
           date: string | null;
           location: string | null;
+          category: string | null;
           bodyRaw: any | null;
         }
       ]
@@ -28,10 +29,21 @@ export default function Timeline({ events }: TimelineType) {
       <VerticalTimeline className="my-10" animate={false}>
         {events &&
           events.map((post, index) => {
+            let icon = null;
+            let iconStyle = null;
+
+            if (post.category === "Work") {
+              icon = <BriefcaseIcon />;
+              iconStyle = { background: "rgb(33, 150, 243)", color: "#fff" };
+            } else if (post.category === "School") {
+              icon = <AcademicCapIcon />;
+              iconStyle = { background: "rgb(30, 187, 56)", color: "#fff" };
+            }
+
             return (
               <VerticalTimelineElement
-                icon={<BriefcaseIcon />}
-                iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+                icon={icon}
+                iconStyle={iconStyle}
                 position={index % 2 == 0 ? "left" : "right"}
                 key={post.title}
               >
@@ -39,12 +51,17 @@ export default function Timeline({ events }: TimelineType) {
                   {post.title}
                 </h3>
                 <div className="flex flex-row space-x-8">
-                  <h4 className="text-sm lg:text-base font-light">
-                    <span className="font-bold">Location:</span> {post.location}
-                  </h4>
-                  <h4 className="text-sm lg:text-base font-light">
-                    <span className="font-bold">Date:</span> {post.date}
-                  </h4>
+                  {post.location && (
+                    <h4 className="text-sm lg:text-base font-light">
+                      <span className="font-bold">Location:</span>{" "}
+                      {post.location}
+                    </h4>
+                  )}
+                  {post.date && (
+                    <h4 className="text-sm lg:text-base font-light">
+                      <span className="font-bold">Date:</span> {post.date}
+                    </h4>
+                  )}
                 </div>
                 <PortableText
                   content={post.bodyRaw}
