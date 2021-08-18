@@ -7,7 +7,7 @@ import Socials from "./components/Socials";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data } = await client.query({
     query: gql`
       query posts {
@@ -33,8 +33,23 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allPost, aboutMe }) {
-  const aboutMeRef = useRef();
+type HomeType = {
+  allPost: [
+    {
+      title: string;
+      location: string;
+      date: string;
+      bodyRaw: any;
+    }
+  ];
+  aboutMe: {
+    title: string;
+    bodyRaw: any;
+  };
+};
+
+export default function Home({ allPost, aboutMe }: HomeType) {
+  const aboutMeRef = useRef<HTMLDivElement>(null);
 
   return (
     <>

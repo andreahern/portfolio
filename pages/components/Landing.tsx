@@ -1,8 +1,13 @@
 import profilePic from "../../public/me.jpg";
 import Image from "next/image";
 import { ChevronDoubleDownIcon } from "@heroicons/react/solid";
+import { RefObject } from "react";
 
-export default function Landing({ aboutMeRef }) {
+type LandingType = {
+  aboutMeRef: RefObject<HTMLDivElement>;
+};
+
+export default function Landing({ aboutMeRef }: LandingType) {
   return (
     <div className="text-body h-screen flex flex-col justify-center items-center filter drop-shadow-lg">
       <Image
@@ -20,7 +25,10 @@ export default function Landing({ aboutMeRef }) {
         onClick={() =>
           window.scrollTo({
             behavior: "smooth",
-            top: aboutMeRef.current.offsetTop - 10,
+            top:
+              aboutMeRef.current == null
+                ? 0
+                : aboutMeRef.current.offsetTop - 10,
           })
         }
       />
