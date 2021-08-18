@@ -30,7 +30,7 @@ export default function Timeline({ events }: TimelineType) {
         {events &&
           events.map((post, index) => {
             let icon = null;
-            let iconStyle = null;
+            let iconStyle = {};
 
             if (post.category === "Work") {
               icon = <BriefcaseIcon />;
