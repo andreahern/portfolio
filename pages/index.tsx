@@ -16,18 +16,23 @@ export async function getStaticProps() {
           date
           bodyRaw
         }
+        allAboutMe {
+          title
+          bodyRaw
+        }
       }
     `,
   });
 
   return {
     props: {
-      data: data,
+      allPost: data.allPost,
+      aboutMe: data.allAboutMe[0],
     },
   };
 }
 
-export default function Home({ data }) {
+export default function Home({ allPost, aboutMe }) {
   const aboutMeRef = useRef();
 
   return (
@@ -43,8 +48,8 @@ export default function Home({ data }) {
 
       <main>
         <Landing aboutMeRef={aboutMeRef} />
-        <AboutMe ref={aboutMeRef} />
-        <Timeline events={data} />
+        <AboutMe ref={aboutMeRef} aboutMe={aboutMe} />
+        <Timeline events={allPost} />
       </main>
     </>
   );
