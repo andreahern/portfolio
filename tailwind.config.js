@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         body: "#324B4C",
+        bodyHover: "#466769",
       },
     },
   },

@@ -23,7 +23,7 @@ type TimelineType = {
 export default function Timeline({ events }: TimelineType) {
   return (
     <div className="w-full flex flex-col justify-center items-center mt-32 text-gray-800">
-      <h1 className="text-2xl lg:text-4xl filter drop-shadow-lg ">
+      <h1 className="text-2xl lg:text-4xl filter drop-shadow-lg text-body font-bold">
         Work Experience & Projects
       </h1>
       <VerticalTimeline className="my-10" animate={false}>

@@ -9,7 +9,7 @@ export default function Socials() {
         <a className="w-1/2 h-full flex items-end justify-end">
           <FontAwesomeIcon
             icon={faGithub}
-            className="hover:text-gray-500 text-gray-900"
+            className="hover:text-bodyHover text-body"
           />
         </a>
       </Link>
@@ -17,7 +17,7 @@ export default function Socials() {
         <a className="w-1/2 h-full flex items-end justify-end">
           <FontAwesomeIcon
             icon={faLinkedin}
-            className="hover:text-gray-500 text-gray-900"
+            className="hover:text-bodyHover text-body"
           />
         </a>
       </Link>
